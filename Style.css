@@ -30,7 +30,7 @@ html, body {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -182,7 +182,7 @@ section {
 }
 
 .btn-contato {
-  background-color: rgba(255, 255, 255, 0.842);
+  background-color: rgba(0, 0, 0, 0.842);
   color: black;
   padding: 0.6rem 1.4rem;
   border-radius: 20px;
