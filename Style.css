@@ -40,7 +40,7 @@ section {
 }
 
 .cabecalho{
-  min-height: 100svh;
+  /* min-height: 100vh; */
   padding-top: var(--nav-h);
 }
 
@@ -117,7 +117,7 @@ section {
 .cabecalho h1 {
   font-size: 4.8rem;
   font-weight: 800;
-  color: #fff;
+  color: #000000;
 }
 
 .cabecalho h5 {
@@ -306,10 +306,13 @@ section {
 
 .projetos h3 {
   font-size: var(--subtitulo);
+  margin-bottom: 10px;
+  color: #fff; /* texto branco para contraste no vidro */
 }
 
 .projetos p {
   font-size: var(--descricao);
+  color: #ddd; /* texto mais suave no vidro */
 }
 
 .projetos-grid {
@@ -317,7 +320,7 @@ section {
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  gap: 20rem;
+  gap: 4rem; /* diminuí para não ficar muito espaçado */
   padding: clamp(2rem, 6vw, 8rem);
   color: rgb(0, 0, 0);
 }
@@ -326,17 +329,33 @@ section {
   color: rgb(0, 0, 0);
 }
 
-.projetos-card img {
-  width: 30.5rem;
+.projetos-card.glass {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
-  transition: transform 0.7s ease;
-  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+
+  padding: 2rem;
+  max-width: 30.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.projetos-card.glass:hover {
+  transform: translateY(-5px);
+}
+
+/* se ainda quiser usar imagens dentro do card */
+.projetos-card img {
+  width: 100%;
+  border-radius: 0.8rem;
+  transition: transform 0.7s ease;
 }
 
 .projetos-card:hover img {
-  transform: scale(1.10);
+  transform: scale(1.05);
 }
 
 
@@ -414,19 +433,19 @@ textarea {
   padding: 0.9rem 2.2rem;
   border-radius: 50px;
   border: none;
-  background: linear-gradient(135deg, #00c3ff, #0072ff);
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   font-size: 2.05rem;
-  font-weight: 600;
+  font-weight: 300;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 114, 255, 0.4);
+  transition: all 0.7s ease;
 }
 
 .contatos button:hover {
   transform: scale(1.05);
-  background: linear-gradient(135deg, #0072ff, #00c3ff);
-  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.5);
+  background: #c2c2c2;  
+  box-shadow: 0 8px 20px rgba(34, 34, 34, 0.18);
+  color: #000000;
 }
 
 
@@ -526,3 +545,4 @@ textarea {
 .btn-contato {
   transition: 3s ease;
 }
+

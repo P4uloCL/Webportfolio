@@ -7,6 +7,7 @@
 
   <!-- CSS principal -->
   <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="responsive.css">
 
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -23,15 +24,19 @@
   <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
   <main style="display:none;">
 
-    <!-- ========== NAVBAR ========== -->
+   <!-- ========== NAVBAR ========== -->
     <nav id="navegator" class="navegator" data-aos="fade-down">
-      <ul class="grupo-nav">
-        <li><a href="#sobre_mim">Sobre mim</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#projetos">Portfólio</a></li>
-        <li><a href="#contatos" class="btn-contato">Contatos</a></li>
-      </ul>
-    </nav>
+    <button class="menu-hamburguer">☰</button>
+    <ul class="grupo-nav active" id="menu-principal">
+      <li><a class="nav-links" href="#sobre_mim">Sobre mim</a></li>
+      <li><a class="nav-links" href="#habilidades">Habilidades</a></li>
+      <li><a class="nav-links" href="#projetos">Portfólio</a></li>
+      <li><a class="nav-links" href="#contatos" class="btn-contato">Contatos</a></li>
+    </ul>
+    
+  <!-- Overlay -->
+  <div class="nav-overlay" id="nav-overlay" hidden></div>
+</nav>
 
     <!-- ========== CABEÇALHO ========== -->
     <section id="inicio" class="cabecalho">
@@ -41,9 +46,9 @@
           <h1>Paulo Costa.</h1>
           <h5>Full-Stack Developer / UX Design</h5>
           <div class="social-icons">
-            <a href="#" target="_blank"><img src="Icons/Social Medias/Email.svg" alt="Email"></a>
-            <a href="#" target="_blank"><img src="Icons/Social Medias/GitHub.svg" alt="GitHub"></a>
-            <a href="#" target="_blank"><img src="Icons/Social Medias/LinkedIn.svg" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/jrpaulow/" target="_blank"><img src="Icons/Social Medias/Instagram.svg" alt="Instagram"></a>
+            <a href="https://github.com/P4uloCL" target="_blank"><img src="Icons/Social Medias/GitHub.svg" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/paulo-roberto-costa-279a32331/" target="_blank"><img src="Icons/Social Medias/LinkedIn.svg" alt="LinkedIn"></a>
           </div>
         </div>
         <div class="apresentacao-right" data-aos="fade-left"></div>
@@ -102,26 +107,29 @@
 </section>
 
     <!-- ========== PORTFÓLIO / PROJETOS ========== -->
-    <section id="projetos" class="projetos">
-      <div class="skills-box" data-aos="fade-up"><span class="projetosTitulo">Projetos</span></div>
-      <div class="projetos-grid">
-        <div class="projetos-card" data-aos="zoom-in" data-aos-delay="100">
-          <img src="" alt="Projeto 1">
-          <h3>Título do Projeto</h3>
-          <p>Descrição do projeto</p>
-        </div>
-        <div class="projetos-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="" alt="Projeto 2">
-          <h3>Título do Projeto</h3>
-          <p>Descrição do projeto</p>
-        </div>
-        <div class="projetos-card glass" data-aos="zoom-in" data-aos-delay="300">
-          <img src="" alt="Projeto 3">
-          <h3>Título do Projeto</h3>
-          <p>Descrição do projeto</p>
-        </div>
-      </div>
-    </section>
+<section id="projetos" class="projetos">
+  <div class="skills-box" data-aos="fade-up">
+    <span class="projetosTitulo">Projetos</span>
+  </div>
+
+  <div class="projetos-grid">
+    <div class="projetos-card glass" data-aos="zoom-in" data-aos-delay="100">
+      <h3>Título do Projeto</h3>
+      <p>Descrição do projeto</p>
+    </div>
+
+    <div class="projetos-card glass" data-aos="zoom-in" data-aos-delay="200">
+      <h3>Título do Projeto</h3>
+      <p>Descrição do projeto</p>
+    </div>
+
+    <div class="projetos-card glass" data-aos="zoom-in" data-aos-delay="300">
+      <h3>Título do Projeto</h3>
+      <p>Descrição do projeto</p>
+    </div>
+  </div>
+</section>
+
 
     <!-- ========== CONTATOS ========== -->
     <section class="contatos" id="contatos">
@@ -161,6 +169,9 @@
     const mensagemFinal = document.getElementById('final-message');
     const conteudoSite = document.querySelector('main');
     const preloader = document.getElementById('preloader');
+    const menuHamburguer = document.querySelector('.menu-hamburguer');
+    const navMenu = document.getElementById('grupo-nav');
+    const navLinks = document.querySelectorAll('.nav-links');
 
     // ==================== TECNOLOGIAS ====================
     const tecnologias = [
@@ -320,5 +331,20 @@
     }, 5500);
 
   </script>
+
+<script>
+  // Use the correct variable names defined earlier
+  menuHamburguer.addEventListener("click", () => {
+    document.getElementById("menu-principal").classList.toggle("active");
+  });
+
+  // Fechar menu ao clicar em um link
+  document.querySelectorAll('.nav-links').forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("menu-principal").classList.remove("active");
+    });
+  });
+</script>
+
 </body>
 </html>
