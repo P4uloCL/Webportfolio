@@ -27,10 +27,10 @@
    <!-- ========== NAVBAR ========== -->
     <nav id="navegator" class="navegator" data-aos="fade-down">
     <button class="menu-hamburguer">☰</button>
-    <ul class="grupo-nav active" id="menu-principal">
+    <ul id="menu-principal" class="grupo-nav">
       <li><a class="nav-links" href="#sobre_mim">Sobre mim</a></li>
       <li><a class="nav-links" href="#habilidades">Habilidades</a></li>
-      <li><a class="nav-links" href="#projetos">Portfólio</a></li>
+      <li><a class="nav-links" href="#projetos">Projetos</a></li>
       <li><a class="nav-links" href="#contatos" class="btn-contato">Contatos</a></li>
     </ul>
     
@@ -89,7 +89,7 @@
       <img src="Icons/Usando Agora/JS.svg" alt="JavaScript" data-color="Icons/Usando Agora/JS-COLOR.svg">
     </li>
     <li class="skill node" data-aos="zoom-in" data-aos-delay="500">
-      <img src="Icons/Usando Agora/NodeJs.svg" alt="NodeJS" data-color="Icons/Usando Agora/NodeJs-COLOR.svg">
+      <img src="Icons/Usando Agora/NodeJS.svg" alt="NodeJS" data-color="Icons/Usando Agora/NodeJS-COLOR.svg">
     </li>
     <li class="skill python" data-aos="zoom-in" data-aos-delay="600">
       <img src="Icons/Usando Agora/Python.svg" alt="Python" data-color="Icons/Usando Agora/Python-COLOR.svg">
@@ -114,18 +114,24 @@
 
   <div class="projetos-grid">
     <div class="projetos-card glass" data-aos="zoom-in" data-aos-delay="100">
-      <h3>Título do Projeto</h3>
-      <p>Descrição do projeto</p>
+      <a href="https://tela-aluguel-jogos.vercel.app/" target="_blank">
+      <img src="Icons/Projetos/TelaAluguel.png">
+      </a>
+      <p>Projeto: Tela de aluguel de jogos</p>
     </div>
 
     <div class="projetos-card glass" data-aos="zoom-in" data-aos-delay="200">
-      <h3>Título do Projeto</h3>
-      <p>Descrição do projeto</p>
+      <a href="https://projeto-tela-lista-compras.vercel.app/" target="_blank">
+      <img src="Icons/Projetos/TelaDeCompras.png">
+      </a>
+      <p>Projeto: Tela de lista de compras</p>
     </div>
 
     <div class="projetos-card glass" data-aos="zoom-in" data-aos-delay="300">
-      <h3>Título do Projeto</h3>
-      <p>Descrição do projeto</p>
+      <a href="https://projeto-tela-administracao-tempo.vercel.app/" target="_blank">
+      <img src="Icons/Projetos/TeladeFocus.png">
+      </a>
+      <p>Projeto: Tela de sessões de foco</p>
     </div>
   </div>
 </section>
@@ -170,7 +176,7 @@
     const conteudoSite = document.querySelector('main');
     const preloader = document.getElementById('preloader');
     const menuHamburguer = document.querySelector('.menu-hamburguer');
-    const navMenu = document.getElementById('grupo-nav');
+    const navMenu = document.getElementById('menu-principal');
     const navLinks = document.querySelectorAll('.nav-links');
 
     // ==================== TECNOLOGIAS ====================
@@ -331,6 +337,13 @@
     }, 5500);
 
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("menu-principal").classList.remove("active");
+});
+</script>
+
 
 <script>
   // Use the correct variable names defined earlier

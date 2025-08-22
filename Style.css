@@ -312,7 +312,7 @@ section {
 
 .projetos p {
   font-size: var(--descricao);
-  color: #ddd; /* texto mais suave no vidro */
+  color: #ffffff; /* texto mais suave no vidro */
 }
 
 .projetos-grid {
